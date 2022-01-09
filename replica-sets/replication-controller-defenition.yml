@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replica-example
+spec:
+  replicas: 4
+  template:
+    metadata:
+      name: 'pods'
+      labels:
+        tier: backend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
