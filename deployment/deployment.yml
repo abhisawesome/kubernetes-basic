@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: replica-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      name: 'pods'
+      labels:
+        tier: backend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
